@@ -2,6 +2,12 @@ import selenium.webdriver as webdriver
 from selenium.webdriver.common.keys import Keys
 import getpass
 
+# Change the username below to your keberos user name
+
+u_name = "cs5190431"
+
+####################################################################################################
+
 driver = webdriver.Chrome()
 driver.minimize_window()
 driver.get("https://moodle.iitd.ac.in/login/index.php")
@@ -14,8 +20,9 @@ passwd = driver.find_element_by_id("password")
 form = driver.find_element_by_id("login")
 captcha = form.text
 
+
 email.clear()
-email.send_keys("cs5190431")
+email.send_keys(u_name)
 passwd.clear()
 passwd.send_keys(getpass.getpass())
 
